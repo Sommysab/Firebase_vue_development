@@ -70,9 +70,9 @@ router.beforeEach((to, from, next) => {
   // Check for requiredAuth guard
   if(to.matched.some(record => record.meta.requiresAuth)){
     
-    // Check if NOT logged in -
+    // Check if NOT logged in
     
-    if(!store.get('currentUser')){
+    if(!store.get('currentUser')) {
       // Go to login
       next({
         path: '/login',
@@ -86,8 +86,7 @@ router.beforeEach((to, from, next) => {
     }
   }else if(to.matched.some(record => record.meta.requiresGuest)) {
         
-    // Check if NOT logged in
-    
+    // Check if NOT logged in    
     if(store.get('currentUser')){
       // Go to login
       next({
