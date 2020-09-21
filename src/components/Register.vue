@@ -41,7 +41,6 @@ export default {
             .createUserWithEmailAndPassword(this.email, this.password)
             .then(data => { 
                 alert(`Account created for ${data.user.email}`)
-                // this.$router.push('/')
                 this.$router.go({path: this.$router.path})
             })
             .catch(e => alert(e.message))

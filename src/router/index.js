@@ -68,10 +68,8 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   // Check for requiredAuth guard
-  if(to.matched.some(record => record.meta.requiresAuth)){
-    
-    // Check if NOT logged in
-    
+  if(to.matched.some(record => record.meta.requiresAuth)){    
+    // Check if NOT logged in    
     if(!store.get('currentUser')) {
       // Go to login
       next({
