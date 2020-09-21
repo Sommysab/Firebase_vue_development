@@ -84,8 +84,7 @@ router.beforeEach((to, from, next) => {
       // Proceed to route
       next();
     }
-  }else if(to.matched.some(record => record.meta.requiresGuest)) {
-        
+  }else if(to.matched.some(record => record.meta.requiresGuest)) {         
     // Check if NOT logged in    
     if(store.get('currentUser')){
       // Go to login
